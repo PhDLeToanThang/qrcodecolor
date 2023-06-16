@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>QR Code Generator</title>
+<!-- Include qr-code-styling library -->
+<script src="/qr-code-styling.js"></script>
+</head>
+<body>
+<!-- Text input element -->
+Input URL or String:
+<input id="text" type="text" value="Hello World or URL to Qrcode push" onchange="generateQRCode();"/>
+<!-- QR code element -->
+<div id="qrcode"></div>
+<!-- Script element -->
+<script>
+// Function to generate QR code
+function generateQRCode() {
+// Get the text input value
+var text = document.getElementById("text").value;
+// Create a new QRCodeStyling object
+var qrcode = new QRCodeStyling({
+width: 400,
+height: 400,
+data: text,
+image: "/atclogo_400x400.png", // Path to your logo image
+dotsOptions: {
+color: "#5868bf", // Color of the dots
+type: "rounded" // Shape of the dots
+},
+backgroundOptions: {
+color: "#ffffff", // Color of the background
+},
+imageOptions: {
+crossOrigin: "anonymous", // To avoid CORS issues
+margin: 20 // Margin around the logo image
+}
+});
+// Append the QR code to the element with id "qrcode"
+qrcode.append(document.getElementById("qrcode"));
+}
+// Call the function on page load
+generateQRCode();
+</script>
+</body>
+</html>
+
+# qrcode setup a Server Web QRcode, Barcode have Color and insert Pics
