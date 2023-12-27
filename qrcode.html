@@ -7,10 +7,20 @@
 <body>
 <!-- Text input element -->
 Input URL or String:
-<input id="text" type="text" value="Hello World or URL to Qrcode push" onchange="generateQRCode();"/>
+<input id="text" type="text" value="setCurrentURL();" onchange="generateQRCode();"/>
 <!-- QR code element -->
 <div id="qrcode"></div>
 <!-- Script element -->
+<script>
+// Function to get the current URL and set it as the input value
+function setCurrentURL() {
+  var currentURL = window.location.href;
+  document.getElementById("text").value = currentURL;
+}
+// Call the function on page load
+setCurrentURL();
+</script>
+
 <script>
 // Function to generate QR code
 function generateQRCode() {
